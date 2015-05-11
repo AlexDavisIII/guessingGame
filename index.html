@@ -6,7 +6,7 @@ tries it took for CPU2 to guess CPU1's number correctly.
 <!doctype html>
 <html>
 <head>
-    <title>Guessing Game</title>
+    <title>Guessing Game | CPU v. CPU</title>
 
     <meta charset="utf-8" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -18,7 +18,7 @@ tries it took for CPU2 to guess CPU1's number correctly.
 	<header>
 		<h1>CPU v. CPU Guessing Game</h1>
 	</header>
-	<section>
+	<section align="center">
 		<script type="text/javascript">
 			var MAX_VALUE = 10000;
 			var cpu1Random = (Math.random() * MAX_VALUE) + 1; //0 and 1 
@@ -42,11 +42,16 @@ tries it took for CPU2 to guess CPU1's number correctly.
 			function theMessage(thisMany, cpu1Num){
 				thisMany = cpu2Guess();
 				cpu1Num = cpu1RandomRounded;
-				document.write("It took the cpu "+thisMany+" attempts to guess the number "+cpu1Num+" correctly.");
+				document.write("It took the cpu <u><strong>"+thisMany+"</strong></u> attempts to guess the number <u><strong>"+cpu1Num+"</strong></u> correctly.");
 			}
 			
 			theMessage();
 		</script>
+	</section>
+	</section>
+		<br><br>
+		<p>Wanna give it a go yourself? Click below to guess a number between 1 and 10 chosen by the computer!</p>
+		<a href="youPlay.html">Start your game!</a>
 	</section>
 </body>
 </html>

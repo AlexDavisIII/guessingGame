@@ -1,0 +1,55 @@
+<!--The CPU generates a random number between 1 and 10.
+	The player has to guess what the number is in a set amount of tries
+	The game does not end until the player correctly guesses the number
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <title>Guessing Game | You Play</title>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+</head>
+
+<body>
+	<header>
+		<h1>Player v. CPU Guessing Game</h1>
+	</header>
+	<section>
+		<script type="text/javascript">
+			var MAX_VALUE = 9;
+			/*var cpu1Random = (Math.random() * MAX_VALUE) + 1; //0 and 1 
+			var cpu1RandomRounded = Math.round(cpu1Random);*/
+			var holder = 0; //holds the amount of tries it takes for the cpu to guess correctly
+			
+			//function for cpu2 guesses
+			function cpu2Guess(){
+				var cpu2Guess = (Math.random() * MAX_VALUE) + 1;
+				var cpu2GuessRounded = Math.round(cpu2Guess);
+				
+				return cpu2GuessRounded;
+			}
+			
+			//asks the user to input a number
+			var numberGuess = prompt("Guess a number!");
+			var cpuGeneratedGuess = cpu2Guess(); 
+			
+			while(cpuGeneratedGuess != numberGuess){
+				holder++;
+				numberGuess=prompt("Not quite! Give it another go");
+			}
+			
+			function theMessage(thisMany, cpu1Num){
+				thisMany = holder;
+				cpu2Num = cpuGeneratedGuess;
+				document.write("It took you "+thisMany+" attempts to guess the number "+cpuGeneratedGuess+" correctly.");
+			}
+			
+			theMessage();
+		</script>
+	</section>
+</body>
+</html>
